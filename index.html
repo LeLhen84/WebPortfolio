@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Web Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body class="loading">
+  <div id="loading-screen">
+    <div class="logo-container">
+      <div class="image-reveal">
+        <img src="images/mypic.jpeg" alt="Logo">
+      </div>
+      <div class="water-fill"></div>
+    </div>
+    <h1>Loading Portfolio...</h1>
+    <div class="loading-bar-container">
+      <div class="loading-bar" id="loading-bar"></div>
+    </div>
+  </div>
+
+  <div class="page-wrapper"></div>
+  <header>
+    <nav>
+      <div class="nav-container animated-show" >      
+        <button class="burger" id="burger">
+          &#9776; <!-- Unicode for burger icon -->
+        </button>
+    
+        <ul class="nav-links" id="navLinks" >
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="quizzes.html">Quizzes</a></li>
+        </ul>
+    
+        <button id="themeModeToggle" class="animated-show">Dark Mode</button>
+      </div>
+    </nav>
+      
+  </header>
+
+  <main>
+    <section class="hero fade-in">
+        <div class="container">
+            <div class="title">
+                <h1 class="bounce">Hello Welcome to My Web Portfolio</h1>
+                <center><h2 id="typewriter" class="typewriter my-theme-class"></h2></center>
+            </div>
+
+                <div class="title2">
+                    <h4 class="bounce">In This Website</h4>
+                </div>
+
+                        <div class="contentweb">
+                            <p>Check out my best work and learn more about me! in this website I hope you will get interested on the course im pursuing and help you learn more about the world of Information Technology.</p>
+                            <p>In this Website you will see what have I done on my School you will learn more about me, my Projects, and my Quizes</p>
+                          </div>
+
+                <div class="title3">
+                    <h4 class="bounce">Featured Works</h4>
+                </div>
+
+                        <div class="contentprj">
+                            <p>This website featured the works I have done it also have <b>My Projects</b> that I have woks hard on and this are not mine alone I have my classmates help doing this Projects of mine.</p>
+                            <p>You will also see <b>My Quizzes</b> there might be not perfect but I work hard on attaining my scores on my quizzes.</p>
+                            <p>this Website will also featured <b>About Me</b> you will learn more about me and why im in this field, it might be boring but I hope you will have fun on my website.</p>
+                        </div>
+
+                        <div class="propic">
+                            <img src="images\mypic.jpeg" alt="My Picture" onclick="openLightbox(this.src)">
+                        </div>
+
+                        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+                          <img id="lightbox-img" src="images\mypic.jpeg" alt="My Picture">
+                        </div>                    
+                    </div>
+                  </section>
+  </main>
+
+</div>
+  <footer>
+    <p>Contact me at: sc.johnahlen.corpuz@cvsu.edu.ph</p>
+    <p>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    </p>
+      <button id="backToTop" title="Go to top" class="backtotop">↑</button>  
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

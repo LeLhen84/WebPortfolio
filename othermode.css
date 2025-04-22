@@ -1,0 +1,266 @@
+/* -------------------------------------------- hover in home------------------------------------------ */
+
+body.orange-theme .container > div.title2 > h1:hover {
+  transform: scale(1.1); 
+}
+
+body.orange-theme .container > div.title2 > h4:hover {
+  transform: scale(1.1); 
+}
+
+body.orange-theme .container > div.title3 > h4:hover {
+  transform: scale(1.1); 
+}
+
+body.orange-theme .container > div.title > h2:hover {
+  transform: scale(1.1); 
+}
+/*----------------------------------------------------- */
+.container > div.title3 > h4:hover {
+  transform: scale(1.1); 
+}
+
+.container > div.title2 > h4:hover {
+  transform: scale(1.1); 
+}
+
+.container > div.title > h1:hover {
+  transform: scale(1.1); 
+}
+
+.container > div.title > h2:hover {
+  transform: scale(1.1); 
+}
+/* -------------------------------------------- hover in about me------------------------------------------ */
+
+.container2 > div.titlea > h1:hover {
+  transform: scale(1.1); 
+}
+
+.container2 > div.name > h4:hover {
+  transform: scale(1.1); 
+}
+
+.container2 > div.content2 > h4:hover {
+  transform: scale(1.1); 
+}
+
+.container2 > div.content3 > h4:hover {
+  transform: scale(1.1); 
+}
+
+
+body.orange-theme .container2 > div.titlea > h1:hover {
+  transform: scale(1.1); 
+}
+
+body.orange-theme .container2 > div.name > h4:hover {
+  transform: scale(1.1); 
+}
+
+body.orange-theme  .container2 > div.content2 > h4:hover {
+  transform: scale(1.1); 
+}
+
+body.orange-theme .container2 > div.content3 > h4:hover {
+  transform: scale(1.1); 
+}
+
+/* -------------------------------------------- hover in projects------------------------------------------ */
+.container3 > div.titlep > h1:hover {
+  transform: scale(1.1); 
+}
+
+
+body.orange-theme .container3 > div.titlep > h1:hover {
+  transform: scale(1.1); 
+}
+
+/* -------------------------------------------- hover in quizzes------------------------------------------ */
+
+
+.container4 > div.titleq > h1:hover{
+  transform: scale(1.1); 
+}
+
+body.orange-theme .container4 > div.titleq > h1:hover{
+  transform: scale(1.1); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------Navbar Styling--------------------------------------- */
+.nav-container {
+  position:relative;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #f1f1f1;
+  transition: top 0.3s ease;
+}
+
+
+/* ---------------------------------nav left------------------------------ */ 
+nav ul {
+  display: flex;
+  background-color: #000000;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  background-color: #000000;
+  text-decoration: none;
+  padding: 10px 15px;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px blue;
+}
+
+nav ul li a:hover {
+  background-color: #0300a5;
+  border-radius: 5px;
+}
+
+
+
+/* ---------------------------------nav right------------------------------ */
+
+nav ul li a {
+  color: white;
+  background-color: #0000;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px blue;
+}
+
+nav ul li a:hover {
+  background-color: #0300a5;
+  transform: scale(1.1); 
+
+}
+
+nav ul li button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.8s ease;
+}
+
+nav ul li a:hover {
+  background-color: #0300a5;
+  transform: scale(1.1); 
+}
+
+main {
+  padding: 20px;
+}
+
+
+/* --------------------------blue mode------------------------------ */
+body.orange-theme nav {
+  background-color: #000000; 
+  color: #f1f1f1;
+}
+
+body.orange-theme nav ul {
+  background-color: #000000;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+body.orange-theme nav ul li a {
+  color: #ffffff;
+}
+
+body.orange-theme .nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #1f1f1f;
+}
+
+/* --------------------------orange mode------------------------------ */
+
+body.orange-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+body.orange-theme nav {
+  background-color: #000000; 
+}
+
+body.orange-theme nav ul {
+  background-color: #000000;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+body.orange-theme nav ul li a {
+  background-color: #0000;
+  color: #ffffff;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+}
+
+body.orange-theme footer {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+}
+
+body.orange-theme .nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #000000;
+}
+
+
+body.orange-theme nav ul li a {
+  color: white;
+  background-color: #000000;
+  text-decoration: none;
+  padding: 10px 15px;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+  }
+  
+  body.orange-theme nav ul li a:hover {
+    background-color: orangered;
+    border-radius: 5px;
+    }

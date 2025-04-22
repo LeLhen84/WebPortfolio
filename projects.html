@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="loading">
+  <div id="loading-screen">
+    <div class="logo-container">
+      <div class="image-reveal">
+        <img src="images/mypic.jpeg" alt="Logo">
+      </div>
+      <div class="water-fill"></div>
+    </div>
+    <h1>Loading Portfolio...</h1>
+    <div class="loading-bar-container">
+      <div class="loading-bar" id="loading-bar"></div>
+    </div>
+  </div>
+    <div class="page-wrapper">
+    <header>
+      <nav>
+        <div class="nav-container animated-show" >      
+          <button class="burger" id="burger">
+            &#9776; <!-- Unicode for burger icon -->
+          </button>
+      
+          <ul class="nav-links" id="navLinks" >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+          </ul>
+      
+          <button id="themeModeToggle">Dark Mode</button>
+        </div>
+      </nav>
+          
+      </header>
+
+  <main class="hero fade-in">
+    <div class="container3">
+      <div class="titlep">
+        <h1  class="bounce">My Projects</h1>
+      </div>
+
+      <div class="pjtlte">
+          <h4 class="bounce">Project Name</h4>      
+      </div>
+
+      <div class="pjpic">
+        <img src="images\nextpic.jpg" alt="Project 1" onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="lightbox2" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="images\nextpic.jpg" alt="My Picture">
+      </div>
+
+      <div class="contentprj">
+        <p>CONTENT HERE</p>
+      </div>
+
+
+      <div class="pjtlte2">
+        <h4 class="bounce">Project Name</h4>      
+    </div>
+
+      <div class="pjpic2">
+        <img src="images\nextpic.jpg" alt="Project 2" onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="lightbox2" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="images\nextpic.jpg" alt="My Picture">
+      </div>
+
+      <div class="contentprj2">
+        <P>CONTENT HERE</P>
+      </div>
+
+    </div>
+  </main>
+</div>
+  <footer>
+    <p>Contact me at: sc.johnahlen.corpuz@cvsu.edu.ph</p>
+    <p>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    </p>
+    <button id="backToTop" title="Go to top" class="backtotop">↑</button>  
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
