@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+body {
+  margin: 0;
+}
+/* --------------------------------------------------------- */
+/* css ng nav */
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  background-color: #000000;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+ul.sidenav li a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s; /* Added transition for smoother hover effect */
+  cursor: pointer; /* Added cursor pointer on hover */
+}
+ 
+ul.sidenav li a.active {
+  background-color: #7e9c7f;
+  color: white;
+}
+
+ul.sidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+/* --------------------------------------------------------- */
+
+
+/* --------------------------------------------------------- */
+/* css ng context box "yung malaking box na pinaglalagyan ng mga enemies. regions, etc" */
+
+div.content {
+  margin-left: 20%;
+  padding: 3%;
+  height: auto;
+  border-style: solid;
+  border-color: #000;
+  background-image: url(Background.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+}
+/* --------------------------------------------------------- */
+
+
+/* --------------------------------------------------------- */
+/* css ng  responsiveness*/
+@media screen and (max-width: 900px) {
+  ul.sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    color: white;
+  }
+  
+  ul.sidenav li a {
+    float: left;
+    padding: 15px;
+    color: white;
+  }
+  
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  ul.sidenav li a {
+    text-align: center;
+    float: none;
+  }
+}
+/* --------------------------------------------------------- */
+
+
+header{
+  text-align: center;
+  font-size: 45px;
+
+}
+p, h5{
+    padding-left: 5%;
+    color: white;
+}
+
+/* --------------------------------------------------------- */
+/* pang grid ng mga cards */
+.cardGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  gap: 1px;
+
+}
+/* --------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/* eto yung css for the flip cards*/
+.flip-card {
+  background-color: rgb(0, 0, 0);
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  border-radius: 40px;
+  border: white 2PX SOLID;
+  cursor: pointer; /* Added cursor pointer on hover */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgb(0, 0, 0);
+  color: black;
+  border-radius: 40px;
+}
+
+.flip-card-back {
+  background-color: #000000;
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 40px;
+}
+/* --------------------------------------------------------- */
+
+.game-section {
+  margin-bottom: 40px;
+}
+
+.game-section h2 {
+  color: #7e9c7f;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-box {
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid #444;
+  transition: transform 0.3s, box-shadow 0.3s; /* Added transition for smoother hover effect */
+  cursor: pointer; /* Added cursor pointer on hover */
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(126, 156, 127, 0.3);
+}
+
+.feature-box h3 {
+  color: #7e9c7f;
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------- */
+/* Carousel CSS */
+
+/* Basic styling */
+.slider-container {
+            position: relative;
+            max-width: 500px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+        }
+        .active {
+            display: block;
+        }
+        /* Button styling */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+
+.carousel-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 15px;
+  padding: 150px;
+  border: 1px solid #444;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carousel-slide {
+  display: none;
+  padding: 20px;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-image {
+  width: 100%; /* Adjust the width to fit the container */
+  max-width: 1000px; /* Increase max-width for larger images */
+  height: 500px; /* Increase height */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: -100px;
+  display: block;
+}
+.carousel-image-placeholder {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  background-color: #333;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+}
+
+.carousel-title {
+  color: #7e9c7f;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.carousel-description {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.carousel-button {
+  background-color: #7e9c7f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+.carousel-button:hover {
+  background-color: #6b896c;
+  transform: scale(1.1); /* Added scale effect on hover */
+}
+
+.carousel-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #555;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+.indicator-dot:hover {
+  transform: scale(1.2); /* Added scale effect on hover */
+}
+
+.indicator-dot.active {
+  background-color: #7e9c7f;
+}
+
+/* Added styles for combat section bullet points */
+.combat-list {
+  list-style-type: none;
+  padding-left: 5%;
+}
+
+.combat-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.combat-list li:before {
+  content: "•";
+  color: #7e9c7f;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.paragraph-container {
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #444;
+  font-size: 22px;
+}
+.Home {
+  width: 100%; /* Adjust the width to fit the container */
+  max-width: 500px; /* Increase max-width for larger images */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+.gamemechanics {
+  width: 100%; /* Adjust the width to fit the container */
+  max-width: 300px; /* Increase max-width for larger images */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 10px;
+}
+.Gamesummary {
+  width: 100%; /* Adjust the width to fit the container */
+  max-width: 300px; /* Increase max-width for larger images */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 10px;
+}
+/* --------------------------------------------------------- */
+</style>
+</head>
+<body>
+
+<ul class="sidenav">
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#character.html">Character</a></li>
+  <li><a href="#enemies">Enemies</a></li>
+  <li><a href="#region">Region</a></li>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
+<hr>
+<h5>Contact Us:</h5>
+<p>
+  HoYoLAB <br>
+  hoyolab@hoyoverse.com <br> <br>
+  
+  Genshin Impact <br>
+  genshin_cs@hoyoverse.com <br> <br>
+  
+  HoYoverse Account Privacy Policy <br> <br>
+  
+  HoYoverse Account Terms of Service <br> <br>
+  
+  Community Guidelines <br> <br> <br>
+  
+  Copyright © COGNOSPHERE. All Rights Reserved <br> <br>
+  </p>
+</ul>
+
+
+<div class="content">
+
+
+  <img src="DSDSDSDS-removebg-preview.png" alt="Home" class="Home">
+  <br><hr><br><br>
+
+  <div class="game-section">
+    <img src="Gamesummary-removebg-preview (3).png" alt="Gamesummary" class="Gamesummary">
+    <h1>------------------------</h1>
+    <div class="paragraph-container">
+    <p>
+      Welcome to HoYoverse's open-world action RPG where you embark on an epic journey across the vast world of Teyvat. 
+      As a Traveler from another world, you awaken in this land filled with diverse cultures, dangerous enemies, and 
+      elemental magic. Your twin has been taken by an unknown god, and now you must explore the seven nations, each 
+      governed by a different element and Archon, to find answers and reunite with your sibling.
+    </p>
+    <p>
+      Along your journey, you'll meet unique characters with their own stories and abilities, face challenging enemies 
+      from common slimes to powerful weekly bosses, and uncover the ancient mysteries that lie beneath Teyvat's surface. 
+      Command the seven elements—Anemo, Geo, Electro, Dendro, Hydro, Pyro, and Cryo—to overcome obstacles, solve puzzles, 
+      and defeat enemies in dynamic combat.
+    </p>
+  </div>
+  </div>
+
+  <div class="game-section">
+    <img src="Gamemechanics-removebg-preview.png" alt="Gamemechanic" class="gamemechanics">
+    <h1>------------------------</h1>
+    
+    <div class="feature-grid">
+      <div class="feature-box">
+        <h3>Elemental Combat System</h3>
+        <p>Master the seven elements and their reactions to gain tactical advantages. Combine Hydro and Cryo to freeze enemies, 
+        Pyro and Electro to trigger Overloaded explosions, or Dendro and Hydro to create Bloom seeds. Switch between four 
+        characters in your party to create powerful elemental combos and unleash devastating Elemental Bursts.</p>
+      </div>
+      
+      <div class="feature-box">
+        <h3>Exploration</h3>
+        <p>Traverse diverse landscapes from mountains and forests to deserts and oceans. Climb any surface, glide across 
+        canyons, swim through rivers, and discover hidden treasures and challenges throughout the world. Unlock Teleport 
+        Waypoints and Statues of The Seven to fast-travel and restore your abilities.</p>
+      </div>
+      
+      <div class="feature-box">
+        <h3>Character Development</h3>
+        <p>Build a team from over 50 unique characters, each with their own elemental abilities, weapons, and playstyles. 
+        Level up characters, weapons, and artifacts to increase power. Ascend characters to unlock their full potential 
+        and talents that enhance their combat capabilities.</p>
+      </div>
+      
+      <div class="feature-box">
+        <h3>Boss Battles</h3>
+        <p>Test your skills against powerful enemies including Hypostases, Regisvines, and Weekly Bosses. Each boss has 
+        unique attack patterns and vulnerabilities to specific elements. Defeat them to collect materials needed for 
+        character ascension and talent upgrades.</p>
+      </div>
+    </div>
+    
+    <div class="feature-grid">
+      <div class="feature-box">
+        <h3>Gacha System</h3>
+        <p>Use Primogems and Wishes to obtain new characters and weapons through the gacha system. Characters range from 
+        4-star to 5-star rarity, each with unique abilities that can complement your team composition. Limited-time 
+        event banners feature exclusive characters and weapons.</p>
+      </div>
+      
+      <div class="feature-box">
+        <h3>Daily Activities</h3>
+        <p>Complete Daily Commissions to earn Adventure Experience and Primogems. Use Original Resin to claim rewards from 
+        Domains, Ley Line Outcrops, and World Bosses. Participate in events that offer unique challenges, stories, and rewards.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-section">
+    <h1></h1>
+    <h1>------------------------</h1>
+    <p>
+      
+    </p>
+    
+    <!-- Carousel Container -->
+    <div class="game-section">
+      <h1></h1>
+      <h1>------------------------</h1>
+      <p></p>
+      
+      <!-- Carousel Container -->
+      <div class="carousel-container">
+          <!-- Slide 1: Running & Sprinting -->
+          <div class="carousel-slide active">
+              <img src="q11.jpg" alt="Running & Sprinting" class="carousel-image">
+              <h3 class="carousel-title">Running & Sprinting</h3>
+              <p class="carousel-description">
+                  Basic movement that consumes stamina. Press the sprint button to move faster across the terrain. 
+                  Sprinting depletes your stamina bar quickly but allows you to cover more ground in less time. 
+                  Increase your stamina capacity by offering Anemoculus and Geoculus to Statues of The Seven.
+              </p>
+          </div>
+          
+          <!-- Slide 2: Climbing -->
+          <div class="carousel-slide">
+              <img src="q22.jpg" alt="Climbing" class="carousel-image">
+              <h3 class="carousel-title">Climbing</h3>
+              <p class="carousel-description">
+                  Scale mountains, cliffs, and structures by approaching them and moving forward. 
+                  Climbing consumes stamina gradually, and you'll fall if your stamina runs out. 
+                  Plan your climbing routes carefully and use stamina food to climb higher peaks.
+              </p>
+          </div>
+          
+          <!-- Slide 3: Gliding -->
+          <div class="carousel-slide">
+              <img src="q33.jpg" alt="Gliding" class="carousel-image">
+              <h3 class="carousel-title">Gliding</h3>
+              <p class="carousel-description">
+                  Deploy your wind glider to soar through the air. Jump from high places and press the glide button 
+                  to spread your wings. Gliding consumes stamina slowly, allowing you to cover large distances 
+                  and reach otherwise inaccessible areas. Upgrade your glider through special quests.
+              </p>
+          </div>
+          
+          <!-- Slide 4: Swimming -->
+          <div class="carousel-slide">
+              <img src="q44.jpg" alt="Swimming" class="carousel-image">
+              <h3 class="carousel-title">Swimming</h3>
+              <p class="carousel-description">
+                  Traverse bodies of water by swimming on the surface or diving underwater. 
+                  Regular swimming and fast swimming both consume stamina. Beware of running out of stamina 
+                  while far from shore! Collect and use stamina food before long swims.
+              </p>
+          </div>
+  
+          <!-- Slide 5: Teleporting -->
+          <div class="carousel-slide">
+              <img src="q55.jpg" alt="Teleporting" class="carousel-image">
+              <h3 class="carousel-title">Teleporting</h3>
+              <p class="carousel-description">
+                  Fast travel between unlocked Teleport Waypoints, Domains, and Statues of The Seven.
+                  Open your map and select a discovered waypoint to instantly transport your character to that location.
+                  Unlock new teleport points by exploring the world and interacting with these special markers.
+              </p>
+          </div>
+
+          <!-- Slide 6: Normal Attacks -->
+          <div class="carousel-slide">
+            <img src="q6.png" alt="Normal Attacks" class="carousel-image">
+            <h3 class="carousel-title">Normal Attacks</h3>
+            <p class="carousel-description">
+              Basic melee or ranged attacks performed by characters, varying based on their equipped weapon (Sword, Claymore, Polearm, Bow, or Catalyst). These attacks form a combo sequence with multiple hits.
+            </p>
+        </div>
+
+        <!-- Slide 7: Charged Attacks -->
+        <div class="carousel-slide">
+          <img src="q7.jpg" alt="Charged Attacks" class="carousel-image">
+          <h3 class="carousel-title">Charged Attacks</h3>
+          <p class="carousel-description">
+            A stronger attack that consumes stamina. Each weapon type has a unique charged attack:
+
+            Swords & Polearms: A powerful thrust or slash.
+            Claymores: A spinning attack followed by a strong final hit.
+            Bows: A charged shot that can infuse an element at higher charge levels.
+            Catalysts: An enhanced magical projectile infused with the user’s element.
+          </p>
+      </div>
+
+      <!-- Slide 8: Plunging Attacks -->
+      <div class="carousel-slide">
+        <img src="q8.jpg" alt="Plunging Attacks" class="carousel-image">
+        <h3 class="carousel-title">Plunging Attacks</h3>
+        <p class="carousel-description">
+          Performed by attacking while mid-air. Upon landing, the attack deals AoE (Area of Effect) damage, with higher damage if the fall is from a great height. Some characters have special plunge attack variations.
+        </p>
+    </div>
+
+    <!-- Slide 9: Dodging -->
+    <div class="carousel-slide">
+      <img src="q9.jpg" alt="Dodging" class="carousel-image">
+      <h3 class="carousel-title">Dodging</h3>
+      <p class="carousel-description">
+        Sprinting or dashing provides invincibility frames (i-frames), allowing characters to avoid enemy attacks if timed correctly. Certain characters, like Mona and Ayaka, have unique sprint abilities that also apply elemental effects.
+      </p>
+  </div>
+
+  <!-- Slide 10: Shielding -->
+  <div class="carousel-slide">
+    <img src="q55.jpg" alt="Shielding" class="carousel-image">
+    <h3 class="carousel-title">Shielding</h3>
+    <p class="carousel-description">
+      Some characters (e.g., Zhongli, Noelle, Diona) can generate shields that absorb damage. Shields have different strengths and can provide elemental resistance based on the user’s abilities. Stronger shields (like Zhongli’s) can also reduce enemy resistance.
+    </p>
+</div>
+
+<!-- Slide 11: Healing  -->
+<div class="carousel-slide">
+  <img src="q111.jpg" alt="Healing " class="carousel-image">
+  <h3 class="carousel-title">Healing </h3>
+  <p class="carousel-description">
+    Characters with healing abilities (e.g., Barbara, Bennett, Kokomi, Jean) can restore HP for themselves or the party. Healing can also be done using food items, some of which have cooldowns or limitations in co-op mode. Certain weapons and artifacts enhance healing effectiveness.
+  </p>
+</div>
+
+      </div>
+  </div>
+  
+      
+      <!-- Controls -->
+      <div class="carousel-controls">
+        <button class="carousel-button prev-button"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-button next-button"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      
+      <!-- Indicators - Updated to match the 5 slides -->
+      <div class="carousel-indicator">
+        <span class="indicator-dot active" data-slide="0"></span>
+        <span class="indicator-dot" data-slide="1"></span>
+        <span class="indicator-dot" data-slide="2"></span>
+        <span class="indicator-dot" data-slide="3"></span>
+        <span class="indicator-dot" data-slide="4"></span>
+        <span class="indicator-dot" data-slide="5"></span>
+        <span class="indicator-dot" data-slide="6"></span>
+        <span class="indicator-dot" data-slide="7"></span>
+        <span class="indicator-dot" data-slide="8"></span>
+        <span class="indicator-dot" data-slide="9"></span>
+        <span class="indicator-dot" data-slide="10"></span>
+      </div>
+    </div>
+    
+   
+
+  </div>
+
+</div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".carousel-slide");
+    let dots = document.querySelectorAll(".indicator-dot");
+    let prevButton = document.querySelector(".prev-button");
+    let nextButton = document.querySelector(".next-button");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        dots[i].classList.remove("active");
+      });
+
+      slides[index].classList.add("active");
+      dots[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        showSlide(currentIndex);
+      });
+    });
+
+    // Ipakita ang unang slide sa simula
+    showSlide(currentIndex);
+  });
+</script>
+</body>
+</html>

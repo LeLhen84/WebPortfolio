@@ -150,11 +150,11 @@ document.querySelectorAll('#navLinks a').forEach(link => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > lastScrollY) {
-      // Scrolling down
+      // Scrolling down → hide nav
       nav.classList.remove('animated-show');
       nav.classList.add('animated-hide');
     } else if (currentScrollY < lastScrollY) {
-      // Scrolling up
+      // Scrolling up → show nav
       nav.classList.remove('animated-hide');
       nav.classList.add('animated-show');
     }
@@ -163,21 +163,21 @@ document.querySelectorAll('#navLinks a').forEach(link => {
   });
 
   // -------------------------------------------loading screen----------------------------------
-const bar = document.getElementById("loading-bar");
+  const bar = document.getElementById("loading-bar");
   const loadingScreen = document.getElementById("loading-screen");
   let width = 0;
-
-  // Detect if the page was refreshed
+  
+  // Detect how the page was loaded
   const navigationType = performance.getEntriesByType("navigation")[0].type;
-
-  if (navigationType === "reload") {
-    // Start loading screen
+  
+  // Only show loading screen on first load or refresh
+  if (navigationType === "reload" || navigationType === "navigate") {
     document.body.classList.add("loading");
     loadingScreen.style.display = "flex";
     loadingScreen.style.opacity = "1";
-
+  
     const simulateLoading = setInterval(() => {
-      if (width >= 110) {
+      if (width >= 100) {
         clearInterval(simulateLoading);
         loadingScreen.style.opacity = "0";
         setTimeout(() => {
@@ -186,12 +186,24 @@ const bar = document.getElementById("loading-bar");
         }, 500);
       } else {
         width += Math.random() * 12;
-        if (width > 130) width = 130;
+        if (width > 100) width = 100;
         bar.style.width = width + "%";
       }
-    }, 100);
+    }, 80);
   } else {
-    // No loading screen, just hide it
+    // Fallback: hide loading screen
     loadingScreen.style.display = "none";
     document.body.classList.remove("loading");
   }
+  
+  // // Prevent loading screen on navbar clicks (optional if using anchors or SPA-like nav)
+  // const navLinks = document.querySelectorAll("nav a");
+  // navLinks.forEach(link => {
+  //   link.addEventListener("click", () => {
+  //     // Instantly hide loading screen if visible due to navigation
+  //     loadingScreen.style.display = "none";
+  //     document.body.classList.remove("loading");
+  //   });
+  // });
+  
+  

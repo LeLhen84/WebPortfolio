@@ -25,12 +25,6 @@ h2 {
   box-shadow: 0 0 10px blue;
 }
 
-
-h4 {
-  text-shadow: 0 0 10px blue;
-  font-size: 25px;
-}
-
 .page-wrapper {
   padding-top: 75px;
 }
@@ -48,26 +42,22 @@ h4 {
   padding: 10px 20px;
   background-color: #000000;
   color: #f1f1f1;
-  transition: top 0.3s ease;
+  transition: transform 0.3s ease-in-out;
+}
 
+.animated-show {
+  transform: translateY(0);
+}
+
+.animated-hide {
+  transform: translateY(-100%);
 }
 
 /*------------------------------------------------ Burger button - hidden on desktop----------------------------- */
 .burger {
   display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.nav-container.animated-hide {
-  animation: slideUp 0.3s ease forwards;
-}
-
-.nav-container.animated-show {
-  animation: slideDown 0.3s ease forwards;
+  background-color: #000000;
+  color:#000000;
 }
 
 /* ---------------------------------nav left------------------------------ */ 
@@ -128,14 +118,6 @@ nav ul li button {
 nav ul li a:hover {
   background-color: #0300a5;
   transform: scale(1.1); 
-}
-
-nav > button .animated-hide {
-  animation: slideUp 0.3s ease forwards;
-}
-
-nav > button .animated-show {
-  animation: slideDown 0.3s ease forwards;
 }
 
 main {
@@ -244,12 +226,13 @@ body.orange-theme .container > div.title > h2:hover {
 .container2 > div {
   padding: 10px;
   margin: 5px;
-  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
 }
 
 .container2 > div.titlea {
   grid-area: title;
   text-align: center;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+
 }
 
 .container2 > div.mypic {
@@ -283,22 +266,29 @@ body.orange-theme .container > div.title > h2:hover {
   width: 100%;
   box-sizing: border-box; 
   overflow: hidden;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
 }
 
 .container2 > div.content {
   grid-area: content;
   text-align: center;
   border: solid;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+
 }
 .container2 > div.content2 {
   grid-area: content2;
   text-align: left;
   border: solid;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+
 }
 .container2 > div.content3 {
   grid-area: content3;
   text-align: left;
   border: solid;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+
 }
 
 /* ----------------------------------------grid for projects------------------------------ */
@@ -314,10 +304,10 @@ body.orange-theme .container > div.title > h2:hover {
   gap: 5px;
   padding: 5px;
 }
+
 .container3 > div {
   padding: 10px;
   margin: 5px;
-  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
 }
 
 .container3 > div.titlep {
@@ -345,6 +335,8 @@ body.orange-theme .container > div.title > h2:hover {
   text-align: center;
   border: solid;
   overflow: hidden;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+
 }
 
 .container3 > div.pjpic img {
@@ -364,29 +356,34 @@ body.orange-theme .container > div.title > h2:hover {
   text-align: center;
   border: solid;
   overflow: hidden;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
 }
 
 .container3 > div.pjpic2 img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container without distortion */
   transition: transform 0.3s ease;
 }
 
 .container3 > div.pjpic2 img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
+
 
 .container3 > div.contentprj {
   grid-area: contentprj;
   text-align: center;
   border: solid;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+
 }
 .container3 > div.contentprj2 {
   grid-area: contentprj2;
   text-align: center;
   border: solid;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+
 }
 
 
@@ -395,18 +392,21 @@ body.orange-theme .container > div.title > h2:hover {
 .container4 {
   display: grid;
   grid-template-areas:
-    "title title title"
-    "qzintro qzintro qzintro"
-    "qzpic qzpic2 qzpic3"
-    "qzpic4 qzpic5 qzpic6";
-  grid-template-columns: 2fr 2fr 2fr;
+    "title title title title"
+    "qzintro qzintro qzintro qzintro"
+    "qzpic qzpic2 qzpic3 qzpic4"
+    "qzpic5  qzpic6 qzpic7 qzpic8"
+    "qzintro2 qzintro2 qzintro2 qzintro2"
+    "qzpic1 qzpic22 qzpic33 qzpic44"
+    "qzpic55  qzpic66 qzpic77 qzpic88";
+
+  grid-template-columns: 2fr 2fr 2fr 2fr;
   gap: 5px;
   padding: 5px;
 }
 .container4 > div {
   padding: 10px;
   margin: 5px;
-  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
 }
 
 .container4 > div.titleq {
@@ -419,121 +419,114 @@ body.orange-theme .container > div.title > h2:hover {
   grid-area: qzintro;
   text-align: center;
   border: solid;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
 }
 
-.container4 > div.qzpic {
-  grid-area: qzpic;
+.container4 > div.qzintro2 {
+  grid-area: qzintro2;
+  text-align: center;
+  border: solid;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+}
+
+body.orange-theme .container4 > div.qzintro2 {
+  grid-area: qzintro2;
+  text-align: center;
+  border: solid;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+}
+
+.container4 > div.qzpic,
+.container4 > div.qzpic2,
+.container4 > div.qzpic3,
+.container4 > div.qzpic4,
+.container4 > div.qzpic5,
+.container4 > div.qzpic6,
+.container4 > div.qzpic7,
+.container4 > div.qzpic8 {
   text-align: center;
   border: solid;
   overflow: hidden;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+  width: 270px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
 }
 
-.container4 > div.qzpic img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
+.container4 > div.qzpic img,
+.container4 > div.qzpic2 img,
+.container4 > div.qzpic3 img,
+.container4 > div.qzpic4 img,
+.container4 > div.qzpic5 img,
+.container4 > div.qzpic6 img,
+.container4 > div.qzpic7 img,
+.container4 > div.qzpic8 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.container4 > div.qzpic img:hover {
-  transform: scale(1.1); 
+.container4 > div.qzpic img:hover,
+.container4 > div.qzpic2 img:hover,
+.container4 > div.qzpic3 img:hover,
+.container4 > div.qzpic4 img:hover,
+.container4 > div.qzpic5 img:hover,
+.container4 > div.qzpic6 img:hover,
+.container4 > div.qzpic7 img:hover, 
+.container4 > div.qzpic8 img:hover{
+  transform: scale(1.1);
 }
 
-.container4 > div.qzpic2 {
-  grid-area: qzpic2;
+.container4 > div.qzpic1,
+.container4 > div.qzpic22,
+.container4 > div.qzpic33,
+.container4 > div.qzpic44,
+.container4 > div.qzpic55,
+.container4 > div.qzpic66,
+.container4 > div.qzpic77,
+.container4 > div.qzpic88 {
   text-align: center;
   border: solid;
   overflow: hidden;
+  box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
+  width: 270px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
 }
 
-.container4 > div.qzpic2 img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
+.container4 > div.qzpic1 img,
+.container4 > div.qzpic22 img,
+.container4 > div.qzpic33 img,
+.container4 > div.qzpic44 img,
+.container4 > div.qzpic55 img,
+.container4 > div.qzpic66 img
+.container4 > div.qzpic77 img
+.container4 > div.qzpic88 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.container4 > div.qzpic2 img:hover {
-  transform: scale(1.1); 
+.container4 > div.qzpic1 img:hover,
+.container4 > div.qzpic22 img:hover,
+.container4 > div.qzpic33 img:hover,
+.container4 > div.qzpic44 img:hover,
+.container4 > div.qzpic55 img:hover,
+.container4 > div.qzpic66 img:hover
+.container4 > div.qzpic77 img:hover 
+.container4 > div.qzpic88 img:hover{
+  transform: scale(1.1);
 }
 
-.container4 > div.qzpic3 {
-  grid-area: qzpic3;
-  text-align: center;
-  border: solid;
-  overflow: hidden;
-}
 
-.container4 > div.qzpic3 img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.container4 > div.qzpic3 img:hover {
-  transform: scale(1.1); 
-}
-
-.container4 > div.qzpic4 {
-  grid-area: qzpic4;
-  text-align: center;
-  border: solid;
-  overflow: hidden;
-}
-
-.container4 > div.qzpic4 img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.container4 > div.qzpic4 img:hover {
-  transform: scale(1.1); 
-}
-
-.container4 > div.qzpic5 {
-  grid-area: qzpic5;
-  text-align: center;
-  border: solid;
-  overflow: hidden;
-}
-
-.container4 > div.qzpic5 img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.container4 > div.qzpic5 img:hover {
-  transform: scale(1.1); 
-}
-
-.container4 > div.qzpic6 {
-  grid-area: qzpic6;
-  text-align: center;
-  border: solid;
-  overflow: hidden;
-}
-
-.container4 > div.qzpic6 img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.container4 > div.qzpic6 img:hover {
-  transform: scale(1.1); 
-}
 
 /* --------------------------blue mode------------------------------ */
 body.orange-theme {
@@ -727,38 +720,65 @@ box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
 }
 /* --------------------------------------------orange theme in about------------------------------------------ */
 
-body.orange-theme .container2 > div {
-padding: 10px;
-margin: 5px;
-box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+body.orange-theme .container2 > div.titlea {
+  grid-area: title;
+  text-align: center;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
 }
 
 body.orange-theme .container2 > div.mypic {
-grid-area: mypic;
-text-align: center;
-border: solid;
-height: 100%;
-width: 100%;
-box-sizing: border-box; 
-overflow: hidden;
-box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+  grid-area: mypic;
+  text-align: center;
+  border: solid;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box; 
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+}
+
+body.orange-theme .container2 > div.name {
+  grid-area: name;
+  text-align: center;
+  border: solid;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box; 
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+}
+
+body.orange-theme .container2 > div.content {
+  grid-area: content;
+  text-align: center;
+  border: solid;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+body.orange-theme .container2 > div.content2 {
+  grid-area: content2;
+  text-align: left;
+  border: solid;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+body.orange-theme .container2 > div.content3 {
+  grid-area: content3;
+  text-align: left;
+  border: solid;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
 }
 
 
 /* --------------------------------------------orange theme in projects------------------------------------------ */
 
-body.orange-theme .container3 > div {
-padding: 10px;
-margin: 5px;
-box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
-}
-
 body.orange-theme .container3 > div.titlep {
-grid-area: title;
-text-align: center;
-box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+  grid-area: title;
+  text-align: center;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
 }
-
 
 body.orange-theme .container3 > div.pjtlte {
   grid-area: pjtlte;
@@ -773,13 +793,126 @@ body.orange-theme .container3 > div.pjtlte2 {
   box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
   border:solid 1px;
 }
+
+body.orange-theme .container3 > div.pjpic {
+  grid-area: pjpic;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+}
+
+body.orange-theme .container3 > div.pjpic2 {
+  grid-area: pjpic2;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+}
+
+body.orange-theme .container3 > div.contentprj {
+  grid-area: contentprj;
+  text-align: center;
+  border: solid;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+
+body.orange-theme .container3 > div.contentprj2 {
+  grid-area: contentprj2;
+  text-align: center;
+  border: solid;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
 /* --------------------------------------------orange theme in quizes------------------------------------------ */
 
-body.orange-theme .container4 > div {
-padding: 10px;
-margin: 5px;
-box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+body.orange-theme .container4 > div.titleq {
+  grid-area: title;
+  text-align: center;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
 }
+body.orange-theme .container4 > div.qzintro {
+  grid-area: qzintro;
+  text-align: center;
+  border: solid;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+
+body.orange-theme .container4 > div.qzpic {
+  grid-area: qzpic;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+
+body.orange-theme .container4 > div.qzpic2 {
+  grid-area: qzpic2;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+body.orange-theme .container4 > div.qzpic3 {
+  grid-area: qzpic3;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+
+body.orange-theme .container4 > div.qzpic4 {
+  grid-area: qzpic4;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+
+
+body.orange-theme .container4 > div.qzpic5 {
+  grid-area: qzpic5;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+
+}
+
+body.orange-theme .container4 > div.qzpic6 {
+  grid-area: qzpic6;
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+}
+
+body.orange-theme .container4 > div.qzpic1,
+body.orange-theme .container4 > div.qzpic22,
+body.orange-theme .container4 > div.qzpic33,
+body.orange-theme .container4 > div.qzpic44,
+body.orange-theme .container4 > div.qzpic55,
+body.orange-theme .container4 > div.qzpic66,
+body.orange-theme .container4 > div.qzpic77,
+body.orange-theme .container4 > div.qzpic88 {
+  text-align: center;
+  border: solid;
+  overflow: hidden;
+  box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
+  width: 270px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+}
+
 /* ---------------------------------animation------------------------------- */
 .fade-in {
   animation: fadeIn 1s ease-in;
@@ -797,16 +930,15 @@ box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  width: 90vw;
+  height: 90vh;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
 .lightbox img {
-  width: 80%;
+  width: 87%;
   max-width: 500px;
   border: 5px solid white;
   border-radius: 10px;
@@ -825,16 +957,15 @@ div.lightbox img:hover {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  width: 90vw;
+  height: 90vh;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
 .lightbox2 img {
-  width: 80%;
+  width: 90%;
   max-width: 400px;
   border: 5px solid white;
   border-radius: 10px;
@@ -843,6 +974,33 @@ div.lightbox img:hover {
 }
 
 div.lightbox2 img:hover {
+  transform: scale(1.1); 
+}
+
+/* -------------------------------------------show when clicking for quizzes ---------------------------------------- */
+
+.lightbox3 {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox3 img {
+  width: 90%;
+  max-width: 500px;
+  border: 5px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+div.lightbox3 img:hover {
   transform: scale(1.1); 
 }
 
@@ -868,6 +1026,46 @@ div.lightbox2 img:hover {
 }
 
 /* ----------------------------------Adjust for orange mode ----------------------------------*/
+/* ------------------------------------------footer------------------------------------- */
+footer {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center; 
+  margin-top: 20px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  border-radius: 50%; 
+  transition: transform 0.3s, background-color 0.3s; 
+  padding: 8px; 
+  background-color: transparent; 
+  box-shadow: 0 0 10px blue;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  background-color: blue; 
+}
+
+.backtotop{
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
 body.orange-theme #backToTop {
   background-color: #333;
   color: #fff;
@@ -879,20 +1077,20 @@ body.orange-theme #backToTop:hover {
   transform: scale(1.1); 
 }
 
-/* ------------------------------------------footer------------------------------------- */
-footer {
-  background-color: #1f1f1f;
-  color: #f1f1f1;
-  text-align: center;
-  padding: 15px;
-  position: relative;
-  padding: 40px 20px;
+body.orange-theme .social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  border-radius: 50%; 
+  transition: transform 0.3s, background-color 0.3s; 
+  padding: 8px; 
+  background-color: transparent; 
+  box-shadow: 0 0 10px #cd5805;
 }
 
-.backtotop{
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
+body.orange-theme .social-icons img:hover {
+  transform: scale(1.1); 
+  background-color: #cd5805;
 }
 
 /* Responsive */
@@ -904,8 +1102,10 @@ footer {
 
 /* --------------------------------bounce----------------------------------- */
 
-.bounce {
+.bounce, h4 {
   animation: bounce 1s infinite;
+  text-shadow: 0 0 10px blue;
+  font-size: 25px;
 }
 
 @keyframes bounce {
@@ -1134,6 +1334,15 @@ body.loading footer {
 /* ---------------------------------responsive------------------------------- */
 /* Responsive nav links*/
 @media (max-width: 768px) {
+  #burger {
+    display: flex;
+    background: #0000;
+    color: #ffff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
@@ -1239,12 +1448,6 @@ body.loading footer {
     width: 100%;
     padding-right: 70%;
     box-sizing: border-box;
-  }
-}
-
-@media (min-width: 769px) {
-  body.orange-theme .nav-links {
-    display: flex !important;
   }
 }
 

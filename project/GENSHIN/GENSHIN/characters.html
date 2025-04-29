@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  
+
+
+}
+/* --------------------------------------------------------- */
+/* css ng nav */
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  background-image: url(Background.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+ul.sidenav li a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+ 
+ul.sidenav li a.active {
+  background-color: #7e9c7f;
+  color: white;
+}
+
+ul.sidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+/* --------------------------------------------------------- */
+
+
+/* --------------------------------------------------------- */
+/* css ng context box "yung malaking box na pinaglalagyan ng mga enemies. regions, etc" */
+
+div.content {
+  margin-left: 20%;
+  padding: 5%;
+  height: auto;
+  border-style: solid;
+  border-color: #000;
+  background-color: black;
+  color: white;
+  background-image: url(Background.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* --------------------------------------------------------- */
+
+
+/* --------------------------------------------------------- */
+/* css ng  responsiveness*/
+@media screen and (max-width: 900px) {
+  ul.sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    color: white;
+  }
+  
+  ul.sidenav li a {
+    float: left;
+    padding: 15px;
+    color: white;
+  }
+  
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  ul.sidenav li a {
+    text-align: center;
+    float: none;
+  }
+}
+/* --------------------------------------------------------- */
+
+
+header{
+  text-align: center;
+  font-size: 45px;
+
+}
+p, h5{
+    padding-left: 5%;
+    color: white;
+}
+
+/* --------------------------------------------------------- */
+/* pang grid ng mga cards */
+.cardGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  gap: 1px;
+
+
+}
+/* --------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/* eto yung css for the flip cards*/
+.flip-card {
+  background-color: rgb(0, 0, 0);
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  border-radius: 40px;
+  border: white 2PX SOLID;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgb(0, 0, 0);
+  color: black;
+  border-radius: 40px;
+}
+
+.flip-card-back {
+  background-color: #000000;
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 40px;
+  height:100%;
+  width:100%;
+}
+/* --------------------------------------------------------- */
+
+</style>
+</head>
+<body>
+
+<ul class="sidenav">
+  <li><a class="active" href="home.html">Home</a></li>
+  <li><a href="characters.html">Character</a></li>
+  <li><a href="index.html">Enemies</a></li>
+  <li><a href="#region">Region</a></li>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
+<hr>
+<h5>Contact Us:</h5>
+<p>
+  HoYoLAB <br>
+  hoyolab@hoyoverse.com <br> <br>
+  
+  Genshin Impact <br>
+  genshin_cs@hoyoverse.com <br> <br>
+  
+  HoYoverse Account Privacy Policy <br> <br>
+  
+  HoYoverse Account Terms of Service <br> <br>
+  
+  Community Guidelines <br> <br> <br>
+  
+  Copyright © COGNOSPHERE. All Rights Reserved <br> <br>
+  </p>
+</ul>
+
+
+<div class="content">
+
+  <header id="Character"><b>Characters <img src="IconCharacter.webp"></b></header>
+
+  <br><hr><br><br>
+  
+<h1 class="head">Main Character <img src="Achievement_Wonders_of_the_World.webp" style="height:80px;" ></h1>
+<h1>------------------------</h1>
+
+<div class="cardGrid">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="TravelerIcon.webp" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1 style="font-size: 20px;">LUMINE/
+            AETHER</h1> 
+        <p>Weapon: Sword</p> 
+        <p>Protagonist</p> 
+      </div>
+    </div>
+  </div>
+</div>
+ <br>
+  <h1>Pyro <img src="ElementPyro.png"></h1>
+  <h1>------------------------</h1>
+<div class="cardGrid">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="Amber.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>AMBER</h1> 
+        <p>Weapon: Bow</p> 
+        <p>dps</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="Xiangling.png " alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>Xiangling</h1> 
+          <p>Weapon: Polearm</p> 
+          <p>Sub dps/Dps</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Diluc.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>DILUC</h1> 
+            <p>Weapon: Broadsword</p> 
+            <p>Dps</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="HuTao.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>HuTao</h1> 
+              <p>Weapon: Polearm</p> 
+              <p>Dps</p>
+            </div>
+          </div>
+        </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Yanfei.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>YANFEI</h1> 
+                <p>Weapon: Catalyst</p> 
+                <p>Dps</p>
+              </div>
+            </div>
+          </div>
+
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="Klee.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                </div>
+                <div class="flip-card-back">
+                  <h1>KLEE</h1> 
+                  <p>Weapon: Catalyst</p> 
+                  <p>Dps</p>
+                </div>
+              </div>
+            </div>
+</div> <br>
+
+<h1> Cryo <img src="ElementCryo.png" ></h1>
+<h1>------------------------</h1>
+<div class="cardGrid">
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="KamisatoAyaka.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>AYAKA</h1> 
+        <p>Weapon: Sword</p>
+        <p>Dps</p>  
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="Shenhe.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>SHENHE</h1> 
+        <p>Weapon: Polearm</p> 
+        <p>Support/Buffer</p> 
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="Eula.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>EULA</h1> 
+        <p>Weapon: Broadsword</p> 
+        <p>Dps</p> 
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="Ganyu.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>GANYU</h1> 
+        <p>Weapon: Bow</p>
+        <p>Dps</p>  
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="Qiqi.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>QIQI</h1> 
+        <p>Weapon: Sword</p> 
+        <p>Healer</p> 
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="Kaeya.png"Avatar" style="width:150px; height:150px; border-radius: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>KAEYA</h1> 
+        <p>Weapon: Sword</p> 
+        <p>Dps</p> 
+      </div>
+    </div>
+  </div>
+</div> <br>
+
+<h1>Anemo <img src="ElementAnemo.png"></h1>
+<h1>------------------------</h1>
+<div class="cardGrid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="Xiao.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>XIAO</h1> 
+          <p>Weapon: Polearm</p> 
+          <p>Dps</p>
+        </div>
+      </div>
+    </div>
+  
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Venti.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>VENTI</h1> 
+            <p>Weapon: Bow</p> 
+            <p>CC/Swirl</p>
+          </div>
+        </div>
+      </div>
+  
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="Kaedehara.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>KAZUHA</h1> 
+              <p>Weapon: Sword</p> 
+              <p>Support/Buffer</p>
+            </div>
+          </div>
+        </div>
+  
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Jean.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>JEAN</h1> 
+                <p>Weapon: Sword</p> 
+                <p>Healer/sub Dps</p>
+              </div>
+            </div>
+          </div>
+  
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="Sayu.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                </div>
+                <div class="flip-card-back">
+                  <h1>SAYU</h1> 
+                  <p>Weapon: Broadsword</p> 
+                  <p>sub dps/Swirl</p>
+                </div>
+              </div>
+            </div>
+  
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="Sucrose.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>SUCROSE</h1> 
+                    <p>Weapon: Catalyst</p> 
+                    <p>CC/Swirl</p>
+                  </div>
+                </div>
+              </div>
+  </div>
+<br>
+
+<h1>Geo <img src="ElementGeo.png"></h1>
+<h1>------------------------</h1>
+<div class="cardGrid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="Navia.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>NAVIA</h1> 
+          <p>Weapon: Broadsword</p> 
+          <p>Dps</p>
+        </div>
+      </div>
+    </div>
+  
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Zhongli_Avatar.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>ZHONGLI</h1> 
+            <p>Weapon: Polearm</p> 
+            <p>Shielder/Shred</p>
+          </div>
+        </div>
+      </div>
+  
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="Chiori.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>CHIORI</h1> 
+              <p>Weapon: Sword</p> 
+              <p>Sub dps</p>
+            </div>
+          </div>
+        </div>
+  
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Noelle.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>NOELLE</h1> 
+                <p>Weapon: Broadsword</p> 
+                <p>Shileder/Sub dps</p>
+              </div>
+            </div>
+          </div>
+  
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="Albedo.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                </div>
+                <div class="flip-card-back">
+                  <h1>ALBEDO</h1> 
+                  <p>Weapon: Sword</p> 
+                  <p>Shielder/Sub dps</p>
+                </div>
+              </div>
+            </div>
+  
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="AratakiItto.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>ITTO</h1> 
+                    <p>Weapon: Broadsword</p> 
+                    <p>Dps</p>
+                  </div>
+                </div>
+              </div>
+             </div>
+<br>
+
+<h1>Hydro <img src="ElementHydro.png"></h1>
+<h1>------------------------</h1>
+<div class="cardGrid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="Yelan.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>YELAN</h1> 
+          <p>Weapon: Bow</p> 
+          <p>Dps</p>
+        </div>
+      </div>
+    </div>
+  
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Furina.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>FURINA</h1> 
+            <p>Weapon: Sword</p> 
+            <p>Buffer/Sub dps</p>
+          </div>
+        </div>
+      </div>
+  
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="Barbara.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>BARBARA</h1> 
+              <p>Weapon: Catalyst</p> 
+              <p>Healer</p>
+            </div>
+          </div>
+        </div>
+  
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Nilou.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>NILOU</h1> 
+                <p>Weapon: Catalyst</p> 
+                <p>Dps</p>
+              </div>
+            </div>
+          </div>
+  
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="Mona.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                </div>
+                <div class="flip-card-back">
+                  <h1>MONA</h1> 
+                  <p>Weapon: Catalyst</p> 
+                  <p>Buffer</p>
+                </div>
+              </div>
+            </div>
+  
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="Xingqiu.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>XINQIU</h1> 
+                    <p>Weapon: Sword</p> 
+                    <p>Sub dps</p>
+                  </div>
+                </div>
+              </div>
+  </div>
+<br>
+
+<h1>Electro <img src="ElementElectro.png"></h1>
+<h1>------------------------</h1>
+<div class="cardGrid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="Raiden.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>RAIDEN</h1> 
+          <p>Weapon: Polearm</p> 
+          <p>Sub dps/Dps</p>
+        </div>
+      </div>
+    </div>
+  
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Cyno.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>CYNO</h1> 
+            <p>Weapon: Polearm</p> 
+            <p>Dps</p>
+          </div>
+        </div>
+      </div>
+  
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="Keqing.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>KEQING</h1> 
+              <p>Weapon: Sword/p> 
+              <p>Dps</p>
+            </div>
+          </div>
+        </div>
+  
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Ororon_.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>ORORON</h1> 
+                <p>Weapon: Bow</p> 
+                <p>Sub dps</p>
+              </div>
+            </div>
+          </div>
+  
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="Fischl.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                </div>
+                <div class="flip-card-back">
+                  <h1>FISCHL</h1> 
+                  <p>Weapon: Bow</p> 
+                  <p>Sub dps/Dps</p>
+                </div>
+              </div>
+            </div>
+  
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="Lisa.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>LISA</h1> 
+                    <p>Weapon: Catalyst</p> 
+                    <p>Sub dps</p>
+                  </div>
+                </div>
+              </div>
+  </div>
+<br>
+
+<h1>Dendro <img src="ElementDendro.png"></h1>
+<h1>------------------------</h1>
+<div class="cardGrid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="Nahida.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>NAHIDA</h1> 
+          <p>Weapon: Catalyst</p> 
+          <p>Support/Sub Dps</p>
+        </div>
+      </div>
+    </div>
+  
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Emilie.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>EMILIE</h1> 
+            <p>Weapon: Polearm</p> 
+            <p>Dps/Sub Dps</p>
+          </div>
+        </div>
+      </div>
+  
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="Kinich.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>KINICH</h1> 
+              <p>Weapon: Broadsword</p> 
+              <p>Dps</p>
+            </div>
+          </div>
+        </div>
+  
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="Collei.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>COLLEI</h1> 
+                <p>Weapon: Bow</p> 
+                <p>Sub Dps</p>
+              </div>
+            </div>
+          </div>
+  
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="Kaveh.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                </div>
+                <div class="flip-card-back">
+                  <h1>KAVEH</h1> 
+                  <p>Weapon: Broadsword</p> 
+                  <p>Support</p>
+                </div>
+              </div>
+            </div>
+  
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="Baizhu.png" alt="Avatar" style="width:150px; height:150px; border-radius: 40px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>BAIZHU</h1> 
+                    <p>Weapon: Catalyst</p> 
+                    <p>Healer/Support</p>
+                  </div>
+                </div>
+              </div>
+  </div>
+<br>
+
+
+  
+</div>
+</body>
+</html>
+
+
+
