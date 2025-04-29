@@ -409,7 +409,7 @@ body.orange-theme .container > div.title > h2:hover {
   margin: 5px;
 }
 
-.container4 > div.titleq {
+.container4 > div.title {
   grid-area: title;
   text-align: center;
   box-shadow: 0 0 10px #031eef, 0 0 20px #0311a6;
@@ -827,7 +827,7 @@ body.orange-theme .container3 > div.contentprj2 {
 }
 /* --------------------------------------------orange theme in quizes------------------------------------------ */
 
-body.orange-theme .container4 > div.titleq {
+body.orange-theme .container4 > div.title {
   grid-area: title;
   text-align: center;
   box-shadow: 0 0 10px #cd5805, 0 0 20px #ad3d00;
@@ -1535,6 +1535,7 @@ body.loading footer {
 /*---------------------------------- Quizzes Page ------------------------*/
 @media screen and (max-width: 768px) {
   .container4 {
+    display: grid;
     grid-template-areas:
       "title"
       "qzintro"
@@ -1543,10 +1544,36 @@ body.loading footer {
       "qzpic3"
       "qzpic4"
       "qzpic5"
-      "qzpic6";
+      "qzpic6"
+      "qzpic7"
+      "qzpic8"
+      "qzintro2"
+      "qzpic1"
+      "qzpic22"
+      "qzpic33"
+      "qzpic44"
+      "qzpic55"
+      "qzpic66"
+      "qzpic77"
+      "qzpic88";
     grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .container4 > * {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .qzintro2, .qzintro, .title{
+    width: 90%;
   }
 }
+
 
 /* ----------------------------------Footer---------------------------------- */
 @media screen and (max-width: 768px) {
